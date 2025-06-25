@@ -33,6 +33,7 @@ This setup effectively manages data flow and lifecycle in a concurrent environme
 ## Expected Output
 The output will show producers sending numbers and consumers receiving them, with intermingled messages due to concurrent execution. The order of processing by consumers might vary. Eventually, all producers will finish, the channel will be closed, and consumers will drain the remaining values before exiting.
 
+```text
 Producer 1 sending: 1
 Producer 2 sending: 1
 Consumer 1 received: 1
@@ -44,3 +45,4 @@ Channel closed by main orchestrator.
 Consumer 1 finished.
 Consumer 2 finished.
 All jobs are done
+```

@@ -38,6 +38,7 @@ This pattern effectively uses channel closures as a signal for graceful shutdown
 
 The output will show the flow of numbers through each stage of the pipeline, from generation to final processing, demonstrating the sequential nature of data transformation across concurrent goroutines.
 
+```text
 Generator sent: 1
 Generator sent: 2
 Duplicator received: 1, sending: 2
@@ -52,3 +53,4 @@ Final Result: 7
 Final Result: 9
 ...
 All pipeline stages are completed
+```

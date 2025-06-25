@@ -29,6 +29,7 @@ A key learning point in this exercise is understanding how to correctly pass loo
 
 The output will show greetings from each name, potentially in a non-deterministic order due to concurrency, followed by a completion message. For example:
 
+```text
 Hello, my name is Alice!
 Hello, my name is Peter! 
 Hello, my name is James! 
@@ -37,3 +38,4 @@ Hello, my name is Rob!
 All greetings are done!
 
 (The order of "Hello, my name is..." lines may vary.)
+```

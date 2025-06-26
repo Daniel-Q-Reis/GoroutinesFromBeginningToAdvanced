@@ -21,7 +21,7 @@ The solution showcases two phases:
 1. Navigate to this directory:
    ```bash
    cd GoroutinesFromBeginningToAdvanced/Intermediate/Exercise01_MutexAndRaceConditions
-  ```
+   ```
 
 2. Run the Go program:
    ```bash

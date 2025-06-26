@@ -7,17 +7,19 @@ import (
 	"time"
 )
 
+// cancellableWorker simulates a long-running goroutine that can be cancelled.
+// It processes tasks from a channel or shuts down if the context is cancelled.
 func cancelLableWorker(ctx context.Context, workerID int, taskChannel <-chan int, wg *sync.WaitGroup) {
 	defer wg.Done()
 	for {
 		select {
-		case <-ctx.Done():
+		case <-ctx.Done(): // Case 1: Context cancellation signal received
 			fmt.Printf("Worker %d: Context cancelled. Shutting down. \n", workerID)
-			return
-		case task := <-taskChannel:
+			return //Exit the goroutine
+		case task := <-taskChannel: // Case 2: A newtask is received
 			fmt.Printf("Worker %d: Processing task %d\n", workerID, task)
 			time.Sleep(time.Millisecond * 300)
-		default:
+		default: // Case 3: No task available and no cancellation signal
 			// Important: prevents the goroutine from blocking indefinitely if no tasks or cancellation.
 			// It allows the select to "poll" the context.Done() channel periodically.
 			time.Sleep(time.Millisecond * 50)
@@ -27,6 +29,8 @@ func cancelLableWorker(ctx context.Context, workerID int, taskChannel <-chan int
 
 func main() {
 	// Create a context with a cancel function.
+	// 'ctx' is the context that workers will listen to.
+	// 'cancel' is the function that will trigger the cancellation.
 	ctx, cancel := context.WithCancel(context.Background())
 	numWorkers := 3
 	taskChannel := make(chan int)

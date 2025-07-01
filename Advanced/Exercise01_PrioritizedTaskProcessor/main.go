@@ -32,7 +32,7 @@ func (pq PriorityQueue) Len() int {
 // Returns true if the item at index i should come before the item at index j.
 // The comparison logic considers:
 // 1. Higher priority (lower numerical value) first.
-// 2. In case of a tie, uses lower ID as a tie-breaker (FIFO for same priority).
+// 2. In case of a tie, uses lower ID as a tie-breaker (FIFO for same priority, the first-in will be processed first (first-out)).
 func (pq PriorityQueue) Less(i, j int) bool {
 	// Primary comparison by priority
 	if pq[i].Priority != pq[j].Priority {

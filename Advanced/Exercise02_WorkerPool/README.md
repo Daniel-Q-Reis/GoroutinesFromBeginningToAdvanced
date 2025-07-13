@@ -49,6 +49,7 @@ This architecture demonstrates effective use of Go's concurrency primitives to b
 
 ## Project Structure
 
+```bash
 Advanced/Exercise02_WorkerPool/
 ├── cmd/
 │   └── workerpool/
@@ -60,6 +61,7 @@ Advanced/Exercise02_WorkerPool/
 ├── pool.go               # Pool management logic (package exercise02workerpool)
 └── consumer.go           # Consumer logic (package exercise02workerpool)
 ├── README.md             # This file
+```
 
 ## Acknowledgements
 

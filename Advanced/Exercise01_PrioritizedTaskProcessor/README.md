@@ -40,6 +40,10 @@ The solution is structured around a `TaskProcessor` which orchestrates a pool of
 
 This implementation provides a robust and efficient way to handle prioritized work in a concurrent Go application, highlighting advanced concurrency patterns and data structures.
 
+## Acknowledgements
+
+This solution was developed with the aid of AI tools for initial brainstorming and code scaffolding. The complex concurrency logic and specific challenges encountered required significant manual analysis and problem-solving to achieve a robust implementation.
+
 ## How to Run
 
 1. Navigate to this directory:

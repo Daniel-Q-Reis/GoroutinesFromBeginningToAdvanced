@@ -91,9 +91,16 @@ This solution was developed with the aid of AI tools for initial brainstorming a
 The output will show tasks being processed by different workers, with varying completion times due to the simulated complexity. The order of "Task X: Data=Y, isPrime=Z" messages will be non-deterministic due to concurrency. Finally, a summary will be displayed.
 
 ```text
-Task 0: Data=12345, isPrime=false
-Task 1: Data=67890, isPrime=true
-... (many more lines of tasks being processed)
+Task   13        Data = 457908   isPrime = false
+Task   15        Data = 669975   isPrime = false
+Task   4         Data = 958356   isPrime = false
+Task   8         Data = 791912   isPrime = false
+Task   18        Data = 635193   isPrime = false
+Task   10        Data = 181250   isPrime = false
+Task   20        Data = 732786   isPrime = false
+Task   6         Data = 337487   isPrime = true
+Task   0         Data = 430135   isPrime = false
+... (many more lines of tasks being processed, asymmetric processing, the order may vary)
 Processed 1000 tasks
 System Summary:
 Total tasks processed: 1000
